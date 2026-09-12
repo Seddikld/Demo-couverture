@@ -1,19 +1,62 @@
-# Toiture Prestige 33 — Site vitrine (démo)
+# Jef Toiture — Démo de refonte (Noval Agency)
 
-Landing page premium pour une entreprise de couverture, traitement de toiture et de façade, basée à Ambarès-et-Lagrave (Gironde).
+Démo de refonte du site vitrine de **Jef Toiture**, couvreur à Paris et en
+Île-de-France (basé à Ormesson-sur-Marne, 94), réalisée pour montrer à
+l'entreprise ce que sa présence en ligne pourrait devenir.
 
-Site 100 % statique (HTML / CSS / JavaScript), sans framework ni étape de build : simple à comprendre, à modifier et à déployer.
+Site 100 % statique (HTML / CSS / JavaScript), sans framework ni étape de
+build : simple à comprendre, à modifier et à déployer.
+
+## 🎯 Objectif de cette démo
+
+Le site actuel (`toiture-jef.com`) est très chargé visuellement : beaucoup
+de blocs, d'affiches et d'informations présentées en même temps. Cette
+démo propose une version :
+
+- épurée, premium et moderne
+- lisible en quelques secondes
+- parfaitement responsive (mobile / tablette / desktop)
+- orientée conversion (CTA clairs, formulaire de devis, clic-to-call)
+
+## ✅ Informations réelles utilisées
+
+Toutes les informations d'entreprise affichées sont **réelles et
+publiques** (site actuel, fiches professionnelles publiques) :
+
+| Élément | Valeur |
+|---|---|
+| Nom | Jef Toiture |
+| Téléphone | 06 33 05 72 16 |
+| E-mail | contact@toiture-jef.com |
+| Adresse | 38 Rue Henry, 94490 Ormesson-sur-Marne |
+| Horaires | Lundi – Samedi, 8h – 20h |
+| Zone d'intervention | Paris et Île-de-France (basé dans le Val-de-Marne) |
+| Services | Couverture, zinguerie, charpente & bois, étanchéité, nettoyage/démoussage, pose de Velux |
+| Garanties | Devis gratuit sous 48h, garantie décennale, équipe d'artisans agréés, +25 ans d'expérience |
+
+⚠️ **Limite technique de cette session** : l'accès direct au site
+`toiture-jef.com` était bloqué par le pare-feu réseau de cet environnement
+d'exécution. Le contenu ci-dessus a donc été reconstitué à partir des
+informations publiques indexées (registres d'entreprises, annuaires
+professionnels, extraits de pages indexées par les moteurs de recherche)
+plutôt que d'un scraping direct de chaque page. Avant mise en ligne
+réelle, il est recommandé de **relire cette démo face au site actuel**
+pour confirmer chaque donnée (en particulier les horaires et la liste
+exacte des villes desservies) et pour remplacer la section
+« Réalisations » — volontairement illustrée par des visuels génériques
+par type de prestation — par de vraies photos de chantiers.
+
+Aucun avis client, chiffre ou projet fictif n'a été inventé.
 
 ## 📁 Structure du projet
 
 ```
-toiture-prestige-33/
+Demo-couverture/
 ├── index.html          → Page unique contenant toutes les sections
 ├── css/
 │   └── style.css       → Tous les styles (couleurs, typographie, responsive, animations)
 ├── js/
 │   └── script.js       → Menu mobile, animations au scroll, formulaire
-├── images/              → (dossier prêt à recevoir vos futures photos)
 ├── netlify.toml         → Configuration de déploiement Netlify
 ├── robots.txt / sitemap.xml → SEO de base
 └── README.md
@@ -21,75 +64,45 @@ toiture-prestige-33/
 
 ## ▶️ Lancer le site en local
 
-Aucune installation n'est nécessaire. Deux façons simples de prévisualiser le site :
+**Option 1 — le plus simple** : double-cliquez sur `index.html`, il
+s'ouvre directement dans votre navigateur.
 
-**Option 1 — le plus simple**
-Double-cliquez sur le fichier `index.html` : il s'ouvre directement dans votre navigateur.
-
-**Option 2 — avec un serveur local (recommandé pour tester le formulaire)**
-Si vous avez Python installé :
+**Option 2 — avec un serveur local**
 ```bash
-cd toiture-prestige-33
 python3 -m http.server 8000
 ```
-Puis ouvrez `http://localhost:8000` dans votre navigateur.
+Puis ouvrez `http://localhost:8000`.
 
 ## 🚀 Déployer sur Netlify
 
-**Méthode la plus simple (glisser-déposer) :**
-1. Rendez-vous sur [app.netlify.com](https://app.netlify.com) et créez un compte gratuit.
-2. Sur la page d'accueil, glissez-déposez le dossier `toiture-prestige-33` complet dans la zone « Deploy manually ».
-3. Netlify publie le site en quelques secondes et vous fournit une adresse en `.netlify.app`.
-4. Dans **Site settings → Domain management**, vous pouvez ensuite associer votre propre nom de domaine (ex. `toiture-prestige33.fr`).
+1. Glissez-déposez le dossier complet sur [app.netlify.com](https://app.netlify.com) (« Deploy manually »), ou connectez ce dépôt Git pour un déploiement continu.
+2. *Build command* : vide — *Publish directory* : `.` (déjà préconfiguré dans `netlify.toml`).
 
-**Méthode recommandée pour la mise à jour continue (via Git) :**
-1. Créez un dépôt (GitHub, GitLab...) et poussez-y le contenu de ce dossier.
-2. Sur Netlify, cliquez sur « Add new site → Import an existing project » et connectez votre dépôt.
-3. Laissez le champ *build command* vide et indiquez `.` comme *publish directory* (déjà préconfiguré dans `netlify.toml`).
-4. Chaque futur envoi (`git push`) republiera automatiquement le site.
-
-Le formulaire de devis utilise **Netlify Forms** : aucune configuration serveur n'est nécessaire, les demandes reçues via le formulaire apparaîtront automatiquement dans l'onglet **Forms** de votre tableau de bord Netlify (avec option d'être notifié par e-mail).
-
-## ✏️ Informations fictives à remplacer avant mise en ligne réelle
-
-Ce site est une **démonstration commerciale**. Toutes les informations suivantes sont fictives et doivent être remplacées par les vraies coordonnées de l'entreprise avant toute mise en ligne réelle :
-
-| Élément | Valeur actuelle (fictive) | À faire |
-|---|---|---|
-| Nom de l'entreprise | Toiture Prestige 33 | Remplacer partout (logo, titre, footer, JSON-LD) |
-| Adresse | 12 Rue des Artisans, 33440 Ambarès-et-Lagrave | Adresse réelle |
-| Téléphone | 05 56 00 00 00 | Numéro réel (mis à jour dans le header, hero, footer, boutons d'appel) |
-| WhatsApp | +33 6 12 34 56 78 (`wa.me/33612345678`) | Numéro WhatsApp réel |
-| E-mail | contact@toiture-prestige33.fr | E-mail réel |
-| Nom de domaine | toiture-prestige33.fr | Domaine réel une fois acheté |
-| SIRET | 123 456 789 00012 | Numéro SIRET réel |
-| Assurance décennale | « à compléter » | Numéro/assureur réels (obligatoire légalement en France pour ce type d'activité) |
-| Avis clients | Noms et avis d'exemple (Sophie D., Marc L., Amandine B.) | Vrais avis de clients, avec leur accord |
-| Chiffres clés (« 15 ans d'expérience », etc.) | Exemples | Chiffres réels de l'entreprise |
-| Photos de réalisations | Illustrations vectorielles de remplacement | Vraies photos de chantiers (dossier `images/`) |
-| Réseaux sociaux (footer) | Liens `#` | Vrais liens Facebook / Instagram / LinkedIn |
-| Mentions légales / confidentialité | Liens `#` (pages à créer) | Rédiger ces pages obligatoires |
-| Carte (zone d'intervention) | Ambarès-et-Lagrave (OpenStreetMap) | Peut être conservée ou remplacée par Google Maps |
-
-💡 **Astuce** : la plupart de ces éléments sont regroupés en haut du fichier `index.html` (balises `<meta>`, script JSON-LD) et se répètent ensuite dans le header, le hero, la section devis et le footer — un remplacement global (rechercher/remplacer) suffit pour la majorité.
+Le formulaire de contact est une démonstration front-end uniquement (aucune
+donnée n'est envoyée) — un message l'indique clairement aux visiteurs.
 
 ## 🎨 Personnaliser le design
 
-Les couleurs, polices et espacements sont centralisés en haut du fichier `css/style.css`, dans la section `:root` :
+Les couleurs, polices et espacements sont centralisés en haut de
+`css/style.css`, dans la section `:root` :
 ```css
---color-dark:   #1a2332;  /* couleur principale sombre */
---color-accent: #d97742;  /* couleur d'accent (orange terracotta) */
+--color-dark:   #14181f;  /* couleur principale sombre */
+--color-accent: #c17a4a;  /* couleur d'accent (terracotta/cuivre) */
 ```
-Modifier ces valeurs suffit à changer l'identité visuelle de tout le site.
 
-## ✅ Fonctionnalités incluses
+## ✨ Améliorations apportées par rapport au site actuel
 
-- Design premium, responsive (mobile / tablette / desktop)
-- Menu mobile animé
-- Boutons d'appel et bouton WhatsApp flottant
-- Formulaire de demande de devis prêt pour Netlify Forms (avec anti-spam honeypot)
-- Animations légères au défilement
-- Métadonnées SEO de base + données structurées (schema.org) + `robots.txt` / `sitemap.xml`
-- Favicon vectoriel intégré (aucun fichier image externe requis)
-- Accessibilité de base (lien d'évitement, attributs ARIA, contrastes, focus visible)
-- Aucune dépendance externe lourde : chargement rapide
+- Structure resserrée en 8 sections claires (héros, services, atouts,
+  réalisations, à propos, zone d'intervention, appel à l'action, contact)
+  au lieu d'un empilement de blocs et d'affiches.
+- Hiérarchie visuelle nette : un message par section, beaucoup d'espace
+  blanc, gros titres, peu de texte.
+- Navigation sticky avec effet de flou, menu mobile plein écran.
+- CTA « Demander un devis » toujours accessible (header, hero, bandeau
+  CTA, bouton d'appel flottant).
+- Cartes de services modernes et minimalistes plutôt que de longs
+  paragraphes.
+- Micro-interactions et animations d'apparition subtiles au scroll.
+- Design 100 % responsive, testé mobile/tablette/desktop.
+- Aucune information inventée : coordonnées, services, garanties et
+  zone d'intervention reprennent les données réelles de l'entreprise.

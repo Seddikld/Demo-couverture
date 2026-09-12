@@ -1,5 +1,5 @@
 /* ===========================================================
-   Toiture Prestige 33 — Script principal
+   Jef Toiture — Démo (Noval Agency)
    Menu mobile, header au scroll, animations, formulaire
    =========================================================== */
 (function () {
@@ -71,29 +71,17 @@
   var yearEl = document.getElementById("year");
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
 
-  /* ---------- Formulaire de devis ---------- */
+  /* ---------- Formulaire de devis (démo, sans backend) ---------- */
   var form = document.getElementById("devis-form");
   var feedback = document.getElementById("form-feedback");
 
   if (form) {
     form.addEventListener("submit", function (e) {
-      // Validation native HTML5 déjà en place (required, type=email, etc.)
-      if (!form.checkValidity()) {
-        return; // le navigateur affiche les messages natifs
-      }
-
-      // Sur Netlify, ce formulaire est intercepté et envoyé automatiquement
-      // grâce à data-netlify="true" (voir index.html). Le code ci-dessous
-      // sert uniquement à afficher un message de confirmation convivial
-      // lorsque le site tourne en local (hors Netlify), où l'envoi réel
-      // n'est pas disponible.
-      if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:") {
-        e.preventDefault();
-        feedback.textContent = "Aperçu local : le formulaire sera fonctionnel une fois déployé sur Netlify.";
-        feedback.className = "form-note success";
-        form.reset();
-      }
-      // En production sur Netlify, on laisse la soumission suivre son cours normal.
+      e.preventDefault();
+      if (!form.checkValidity()) { return; }
+      feedback.textContent = "Merci ! Ceci est une démo : aucune demande n'est réellement envoyée.";
+      feedback.className = "form-note success";
+      form.reset();
     });
   }
 })();
