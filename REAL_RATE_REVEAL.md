@@ -36,6 +36,22 @@ below already exists as a working Notion workspace — no import step is require
   payments from the brief already entered, so you can see the whole system working
   with real numbers the moment you open it.
 
+## V2: visual & UX pass
+
+A follow-up pass polished presentation only — no database, formula, relation, or
+rollup was touched:
+
+- Home page now opens with a real `# REAL RATE REVEAL` heading and a short
+  **"How it works"** (5 steps), before Quick Actions.
+- The single "Client Health" section was split into two clearly headed, separately
+  scannable sections: **Client Health** (board, grouped by status) and
+  **Biggest Financial Impact** (table, sorted by Money Left on the Table).
+- Added a short **"What the numbers mean"** glossary (Real Hourly Rate, Money Left
+  on the Table, Scope Creep, Client Health Score) using the exact microcopy from
+  the brief.
+- Added a plain-text note (on the home page and on the BrightPath Media page)
+  about manually reordering properties — see below.
+
 ## What you may want to do manually
 
 - **Reorder properties on a client's page**, if you want the exact on-page reading
@@ -43,7 +59,12 @@ below already exists as a working Notion workspace — no import step is require
   Health Score → …). Notion lets you drag properties in the page's Properties panel
   in a few seconds; this isn't something the API can safely do without risking the
   relations already linked to your demo data, so it was left as-is (in the same
-  order the properties are listed in the spec).
+  order the properties are listed in the spec). Both the home page and the
+  BrightPath Media page carry a short note about this.
+- **Double-check the "Client Health" board is grouped by Client Status** — it was
+  configured that way, but Notion's API doesn't echo grouping back for
+  confirmation. If it ever shows one column instead of three, open the view's
+  "···" menu → Group → Client Status (a few seconds).
 - **Show "Unproductive Hours Ratio" as a percent**, if you'd like the literal `%`
   sign — open the formula editor for that property and switch its number format to
   "Percent". It already calculates correctly (0.2 = 20%); this is purely cosmetic.
