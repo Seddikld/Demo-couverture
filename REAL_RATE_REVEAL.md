@@ -52,6 +52,31 @@ rollup was touched:
 - Added a plain-text note (on the home page and on the BrightPath Media page)
   about manually reordering properties — see below.
 
+## V3: Average Payment Delay display fix
+
+The **Payments** database and its "Payment Delay (Days)" / "Payment Delay Status"
+formulas are untouched. On **Clients**, the existing "Avg Payment Delay (Days)"
+rollup (a signed number — negative for early, positive for late) is also untouched,
+because `Payment Score` and `Client Health Score` read it directly; changing its
+type would have broken those formulas.
+
+Instead, a new formula property, **"Avg Payment Delay"**, was added next to it.
+It reads the same untouched rollup and renders it the way you asked:
+- Average before the due date → `"X days early"`
+- Average exactly on the due date → `"On time"`
+- Average after the due date → `"X days late"`
+- No payments yet → `"Not tracked"`
+
+The averaging itself is unchanged — it's the same mean of signed day-deltas as
+before, just displayed in words instead of a signed number. For BrightPath Media
+(5 days late, then 2 days early → average +1.5) this now reads **"1.5 days late"**
+instead of "1.5".
+
+Nothing else was touched: Rate Score, Payment Score, Workload Score, Client
+Health Score, Real Hourly Rate, Expected Earnings, and Money Left on the Table
+all use the exact same formula code as before (verified by comparing each
+formula's internal reference after the change).
+
 ## What you may want to do manually
 
 - **Reorder properties on a client's page**, if you want the exact on-page reading
@@ -68,6 +93,12 @@ rollup was touched:
 - **Show "Unproductive Hours Ratio" as a percent**, if you'd like the literal `%`
   sign — open the formula editor for that property and switch its number format to
   "Percent". It already calculates correctly (0.2 = 20%); this is purely cosmetic.
+- **Two payment-delay properties now exist on Clients**: "Avg Payment Delay (Days)"
+  (the raw signed number, kept only because Payment Score/Health Score need it)
+  and "Avg Payment Delay" (the friendly "X days early/late" text — this is the one
+  to read). If you'd rather see only one, hide "Avg Payment Delay (Days)" from any
+  table view you use (Show/Hide in the "···" menu) — it will keep working for the
+  scores either way, it just won't be visible.
 - **Move the page** out of "Private" into wherever you keep client-facing tools,
   and share it with anyone who needs access.
 
