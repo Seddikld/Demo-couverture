@@ -77,6 +77,30 @@ Health Score, Real Hourly Rate, Expected Earnings, and Money Left on the Table
 all use the exact same formula code as before (verified by comparing each
 formula's internal reference after the change).
 
+## V4: premium visual pass (home page only)
+
+Text-only cleanup of the home page — no database, formula, relation, rollup, or
+view was touched (verified by re-fetching the Clients data source afterward:
+every formula's internal reference is identical to before).
+
+- Removed the duplicated `# REAL RATE REVEAL` heading — the page title (with its
+  one 💰 icon) is now the only title; the tagline sits directly under it.
+- Dropped the emoji bullets from Quick Actions and condensed it to one compact
+  line (`Add Client · Log Hours · Log Payment`) instead of three repetitive
+  bulleted sentences.
+- Tightened "How it works" to five short, bold-led steps.
+- Reframed "Biggest Financial Impact" and "Client Health" with one-line
+  captions instead of decorative text — the table itself already surfaces
+  exactly the 5 key numbers (Real Hourly Rate, Target Hourly Rate, Money Left
+  on the Table, Client Health Score, Client Status).
+- Expanded "What the numbers mean" to cover all 5 key outputs (added Target
+  Hourly Rate and Client Status; kept the existing 4 definitions as-is).
+- Shortened the property-order note.
+
+Note: Notion's dark/light appearance is a per-viewer app setting, not something
+a page can force via the API — the page already reads cleanly in either mode
+since no custom colors were used.
+
 ## What you may want to do manually
 
 - **Reorder properties on a client's page**, if you want the exact on-page reading
